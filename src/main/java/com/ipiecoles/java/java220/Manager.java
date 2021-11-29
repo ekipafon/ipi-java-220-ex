@@ -13,8 +13,8 @@ public class Manager extends Employe{
 
     }
 
-    public Manager(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, HashSet<Technicien> equipe) {
-        super(nom, prenom, matricule, dateEmbauche, salaire);
+    public Manager(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel, HashSet<Technicien> equipe) {
+        super(nom, prenom, matricule, sexe, dateEmbauche, salaire, tempsPartiel);
         this.equipe = equipe;
     }
 
@@ -24,8 +24,8 @@ public class Manager extends Employe{
        return nvllePrime;
     }
 
-    public void ajoutTechnicienEquipe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Integer grade){
-        this.ajoutTechnicienEquipe(new Technicien(nom, prenom, matricule, dateEmbauche, salaire, grade));
+    public void ajoutTechnicienEquipe(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel, Integer grade){
+        this.ajoutTechnicienEquipe(new Technicien(nom, prenom, matricule, sexe, dateEmbauche, salaire, tempsPartiel, grade));
     }
 
     public HashSet<Technicien> getEquipe() {
