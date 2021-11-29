@@ -13,6 +13,10 @@ public class Cadre extends Employe {
         this.coefficiant = coefficiant;
     }
 
+    public Cadre(){
+
+    }
+
     @Override
     public Double getPrimeAnnuelle() {
         return Entreprise.primeAnnuelleBase() * coefficiant;
