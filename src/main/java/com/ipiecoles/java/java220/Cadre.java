@@ -6,11 +6,7 @@ import java.util.Objects;
 
 public class Cadre extends Employe {
 
-    private Double coefficiant = 1d;
-
-    public Cadre(Double coefficiant) {
-        this.coefficiant = coefficiant;
-    }
+    private Double coefficiant = 1.0;
 
     public Cadre(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel, Double coefficiant) {
         super(nom, prenom, matricule, sexe, dateEmbauche, salaire, tempsPartiel);
@@ -33,7 +29,13 @@ public class Cadre extends Employe {
     @Override
     public String toString() {
         return "Cadre{" +
-                "coefficiant=" + coefficiant +
+                "nom='" + this.getNom() + '\'' +
+                ", prenom='" + this.getPrenom() + '\'' +
+                ", matricule='" + this.getMatricule() + '\'' +
+                ", sexe='" + this.getSexe() + '\'' +
+                ", dateEmbauche=" + this.getDateEmbauche() +
+                ", salaire=" + this.getSalaire() +
+                ", coefficiant=" + coefficiant +
                 '}';
     }
 
@@ -50,4 +52,12 @@ public class Cadre extends Employe {
     public int hashCode() {
         return Objects.hash(super.hashCode(), coefficiant);
     }
+
+    @Override
+    public Integer getNbConges(){
+        int coeff = coefficiant.intValue();
+        return Entreprise.NB_CONGES_BASE+coeff;
+    }
+
+
 }
