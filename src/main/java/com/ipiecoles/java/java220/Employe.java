@@ -11,18 +11,38 @@ public abstract class Employe {
     private String nom = new String();
     private String prenom = new String();
     private String matricule = new String();
+    private String sexe = new String();
     private LocalDate dateEmbauche;
     private Double salaire;
+    private boolean tempsPartiel;
 
     public Employe(){
     }
 
-    public Employe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire){
+    public Employe(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel) {
         this.nom = nom;
         this.prenom = prenom;
         this.matricule = matricule;
+        this.sexe = sexe;
         this.dateEmbauche = dateEmbauche;
         this.salaire = salaire;
+        this.tempsPartiel = tempsPartiel;
+    }
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public boolean isTempsPartiel() {
+        return tempsPartiel;
+    }
+
+    public void setTempsPartiel(boolean tempsPartiel) {
+        this.tempsPartiel = tempsPartiel;
     }
 
     public final Integer getNombreAnneeAnciennete(){
@@ -49,8 +69,10 @@ public abstract class Employe {
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", matricule='" + matricule + '\'' +
+                ", sexe='" + sexe + '\'' +
                 ", dateEmbauche=" + dateEmbauche +
                 ", salaire=" + salaire +
+                ", tempsPartiel=" + tempsPartiel +
                 '}';
     }
 
@@ -63,12 +85,12 @@ public abstract class Employe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employe employe = (Employe) o;
-        return Objects.equals(nom, employe.nom) && Objects.equals(prenom, employe.prenom) && Objects.equals(matricule, employe.matricule) && Objects.equals(dateEmbauche, employe.dateEmbauche) && Objects.equals(salaire, employe.salaire);
+        return tempsPartiel == employe.tempsPartiel && Objects.equals(nom, employe.nom) && Objects.equals(prenom, employe.prenom) && Objects.equals(matricule, employe.matricule) && Objects.equals(sexe, employe.sexe) && Objects.equals(dateEmbauche, employe.dateEmbauche) && Objects.equals(salaire, employe.salaire);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nom, prenom, matricule, dateEmbauche, salaire);
+        return Objects.hash(nom, prenom, matricule, sexe, dateEmbauche, salaire, tempsPartiel);
     }
 
     public void setNom(String nom) {

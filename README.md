@@ -3,6 +3,8 @@
 
 Cours de Java, module 220 pour l'IPI
 
+test
+
 La classe `EntrepriseTest` contient des tests permettant de corriger automatiquement les exercices. 
 Pour les exécuter, clic droit sur la classe `EntrepriseTest` : 
 - IntelliJ : => Run EntrepriseTest 

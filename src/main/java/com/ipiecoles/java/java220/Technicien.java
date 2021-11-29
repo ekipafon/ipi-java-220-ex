@@ -11,8 +11,8 @@ public class Technicien extends Employe implements Comparable<Technicien>{
 
     }
 
-    public Technicien(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Integer grade){
-        super(nom, prenom, matricule, dateEmbauche, salaire);
+    public Technicien(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel, Integer grade) {
+        super(nom, prenom, matricule, sexe, dateEmbauche, salaire, tempsPartiel);
         this.grade = grade;
     }
 

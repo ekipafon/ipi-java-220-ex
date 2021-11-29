@@ -12,13 +12,13 @@ public class Commercial extends Employe{
 
     }
 
-    public Commercial(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Double caAnnuel) {
-        super(nom, prenom, matricule, dateEmbauche, salaire);
+    public Commercial(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel, Double caAnnuel) {
+        super(nom, prenom, matricule, sexe, dateEmbauche, salaire, tempsPartiel);
         this.caAnnuel = caAnnuel;
     }
 
-    public Commercial(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Double caAnnuel, Integer performance) {
-        this(nom, prenom, matricule, dateEmbauche,salaire,caAnnuel);
+    public Commercial(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel, Integer performance) {
+        super(nom, prenom, matricule, sexe, dateEmbauche, salaire, tempsPartiel);
         this.performance = performance;
     }
 
