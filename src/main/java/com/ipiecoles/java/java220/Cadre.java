@@ -6,11 +6,11 @@ import java.util.Objects;
 
 public class Cadre extends Employe {
 
-    private Double coefficiant = 1.0;
+    private Double coefficient = 1.0;
 
-    public Cadre(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel, Double coefficiant) {
+    public Cadre(String nom, String prenom, String matricule, String sexe, LocalDate dateEmbauche, Double salaire, boolean tempsPartiel, Double coefficient) {
         super(nom, prenom, matricule, sexe, dateEmbauche, salaire, tempsPartiel);
-        this.coefficiant = coefficiant;
+        this.coefficient = coefficient;
     }
 
     public Cadre(){
@@ -19,15 +19,15 @@ public class Cadre extends Employe {
 
     @Override
     public Double getPrimeAnnuelle() {
-        return Entreprise.primeAnnuelleBase() * coefficiant;
+        return Entreprise.primeAnnuelleBase() * this.coefficient;
     }
 
-    public Double getCoefficiant() {
-        return coefficiant;
+    public Double getCoefficient() {
+        return this.coefficient;
     }
 
-    public void setCoefficiant(Double coefficiant) {
-        this.coefficiant = coefficiant;
+    public void setCoefficient(Double coefficient) {
+        this.coefficient = coefficient;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Cadre extends Employe {
                 ", sexe='" + this.getSexe() + '\'' +
                 ", dateEmbauche=" + this.getDateEmbauche() +
                 ", salaire=" + this.getSalaire() +
-                ", coefficiant=" + coefficiant +
+                ", coefficient=" + this.coefficient +
                 '}';
     }
 
@@ -49,17 +49,17 @@ public class Cadre extends Employe {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Cadre cadre = (Cadre) o;
-        return Objects.equals(coefficiant, cadre.coefficiant);
+        return Objects.equals(coefficient, cadre.coefficient);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), coefficiant);
+        return Objects.hash(super.hashCode(), coefficient);
     }
 
     @Override
     public Integer getNbConges(){
-        int coeff = coefficiant.intValue();
+        int coeff = this.coefficient.intValue();
         return Entreprise.NB_CONGES_BASE+coeff;
     }
 
